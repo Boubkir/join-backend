@@ -3,7 +3,8 @@ from django.contrib.auth.models import User
 
 
 class Task(models.Model):
-    category = models.CharField(max_length=30, default=None)
+    category = models.CharField(max_length=30, default=None,null=True)
+    category_color = models.CharField(max_length=30, default=None, null=True)
     title = models.CharField(max_length=200, default=None)
     description = models.CharField(max_length=200, default=None)
     priority = models.CharField(max_length=10, default=None)
