@@ -1,18 +1,22 @@
 from .models import Task
 from .serializers import TaskSerializer, UserSerializer
 from rest_framework import viewsets, permissions
+from rest_framework.response import Response
 from django.contrib.auth.models import User
-from django.db.models import Q
+from django.shortcuts import get_object_or_404
+
 
 
 class TaskView(viewsets.ModelViewSet):
     serializer_class = TaskSerializer
-    # authentication_classes = [TokenAuthentication]
-    # permission_classes = [permissions.IsAuthenticated]
+    queryset = Task.objects.all()
 
-    def get_queryset(self):
-        user = self.request.user
-        return Task.objects.filter(Q(user=user) | Q(assigned_to=user)).order_by("id")
+    def update(self, request, *args, **kwargs):
+        instance = self.get_object()
+        serializer = self.get_serializer(instance, data=request.data, partial=True)
+        serializer.is_valid(raise_exception=True)
+        self.perform_update(serializer)
+        return Response(serializer.data)
 
 
 
