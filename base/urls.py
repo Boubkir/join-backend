@@ -4,11 +4,13 @@ from rest_framework import routers
 from contacts.views import ContactView
 from authn.views import (
     LogoutView,
-    LoginAPI,
     RegisterAPI,
     EmailLoginAPI,
 )
 from tasks.views import TaskView, UserViewSet
+from django.conf.urls.static import static
+from django.conf import settings
+
 
 
 router = routers.DefaultRouter()
@@ -23,4 +25,4 @@ urlpatterns = [
     path("login/", EmailLoginAPI.as_view(), name="login"),
     path("logout/", LogoutView.as_view(), name="logout"),
     path('reset-password/', include('django_rest_passwordreset.urls', namespace='password_reset')),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
