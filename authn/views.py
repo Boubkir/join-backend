@@ -27,21 +27,17 @@ class RegisterAPI(generics.GenericAPIView):
         serializer.is_valid(raise_exception=True)
         user = serializer.save()
 
-        # Extrahiere zusätzliche Daten aus dem Registrierungsformular
         first_name = request.data.get('first_name')
         last_name = request.data.get('last_name')
         password = request.data.get('password')
         email = request.data.get('email')
 
-        # Setze die zusätzlichen Felder für den Benutzer
         user.first_name = first_name
         user.last_name = last_name
         user.email = email
 
-        # Setze das Passwort für den Benutzer
         user.set_password(password)
 
-        # Speichere den Benutzer im Backend
         user.save()
 
         subject = "Willkommen bei Join"
