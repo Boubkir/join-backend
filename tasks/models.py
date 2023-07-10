@@ -11,6 +11,6 @@ class Task(models.Model):
     status = models.CharField(max_length=20, default=None, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     due_date = models.DateTimeField(default=None)
-    assigned_to = models.ManyToManyField(User, related_name="todos")
+    assigned_to = models.ManyToManyField(User, related_name="tasks")
     sub_tasks = models.JSONField(default=list, null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
