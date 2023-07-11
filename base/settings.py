@@ -139,13 +139,13 @@ REST_FRAMEWORK = {
 
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "w01dcc7d.kasserver.com"
-EMAIL_PORT = 465
-EMAIL_HOST_USER = "mail@boubkir-benamar.de"
-EMAIL_HOST_PASSWORD = "J2sSYxBNhzvNpm7x"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "boubkir.benamar@gmail.com"
+EMAIL_HOST_PASSWORD = "uehzslhfbicylkcw"
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = "mail@boubkir-benamar.de"
-SERVER_EMAIL = "mail@boubkir-benamar.de"
+DEFAULT_FROM_EMAIL = "boubkir.benamar@gmail.com"
+
 
 
 
