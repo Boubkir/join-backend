@@ -44,7 +44,7 @@ class RegisterAPI(generics.GenericAPIView):
         message = "Hallo {},\n\nWillkommen bei unserer App! Vielen Dank für die Registrierung.".format(
             user.username
         )
-        from_email = "noreply@boubkir-benamar.de"
+        from_email = "Join Team <boubkir.benamar@gmail.com>"
         recipient_list = [user.email]
         send_mail(subject, message, from_email, recipient_list)
         
@@ -78,17 +78,14 @@ class EmailLoginAPI(LoginView):
         password = request.data.get('password', None)
 
         if email is None or password is None:
-            # Behandle fehlende E-Mail oder Passwort
             return Response({'error': 'Bitte geben Sie Ihre E-Mail-Adresse und Ihr Passwort ein.'}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
             user = User.objects.get(email=email)
         except User.DoesNotExist:
-            # Behandle Benutzer nicht gefunden
             return Response({'error': 'Ungültige Anmeldeinformationen.'}, status=status.HTTP_400_BAD_REQUEST)
 
         if not user.check_password(password):
-            # Behandle ungültiges Passwort
             return Response({'error': 'Ungültige Anmeldeinformationen.'}, status=status.HTTP_400_BAD_REQUEST)
 
         login(request, user)
@@ -117,8 +114,8 @@ class PasswordResetView(APIView):
             token_generator = PasswordResetTokenGenerator()
             token = token_generator.make_token(user)
             uidb64 = urlsafe_base64_encode(force_bytes(user.pk))
-            from_email = "noreply@boubkir-benamar.de"
-            subject = 'Passwort zurücksetzen'
+            from_email = "Join Team <boubkir.benamar@gmail.com>"
+            subject = 'Reset password'
             reset_link = f"http://localhost:4200/reset-password-confirm/{uidb64}/{token}/"
             send_mail(
                 subject,

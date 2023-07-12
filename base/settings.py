@@ -15,9 +15,9 @@ SECRET_KEY = "django-insecure-cfs=md70ww3()la=kpw_dd+3af*y14!&(q@cihq@u)ir6&xp&@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["127.0.0.1", "http://localhost:4200/",'boubkir.pythonanywhere.com']
+ALLOWED_HOSTS = ["127.0.0.1", "http://localhost:4200/",'boubkir.pythonanywhere.com','https://www.boubkir-benamar.developerakademie.net/','https://www.boubkir-benamar.de/']
 
-CORS_ALLOWED_ORIGINS = ["127.0.0.1", "http://localhost:4200/",'boubkir.pythonanywhere.com']
+CORS_ALLOWED_ORIGINS = ["127.0.0.1", "http://localhost:4200/",'boubkir.pythonanywhere.com','https://www.boubkir-benamar.developerakademie.net/','https://www.boubkir-benamar.de/']
 
 # Application definition
 
@@ -144,8 +144,7 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = "boubkir.benamar@gmail.com"
 EMAIL_HOST_PASSWORD = "uehzslhfbicylkcw"
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = "boubkir.benamar@gmail.com"
-
+DEFAULT_FROM_EMAIL = 'Join Team <boubkir.benamar@gmail.com>'
 
 
 
