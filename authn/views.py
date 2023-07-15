@@ -42,7 +42,7 @@ class RegisterAPI(generics.GenericAPIView):
 
         subject = "Willkommen bei Join"
         message = "Hallo {},\n\nWillkommen bei unserer App! Vielen Dank für die Registrierung.".format(
-            user.username
+            user.first_name
         )
         from_email = "Join Team <boubkir.benamar@gmail.com>"
         recipient_list = [user.email]
