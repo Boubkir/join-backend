@@ -10,7 +10,7 @@ class Task(models.Model):
     priority = models.CharField(max_length=10,null=True, blank=True,default=0)
     status = models.CharField(max_length=20, default=None, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    due_date = models.DateTimeField(null=True, blank=True,default=0)
+    due_date = models.DateTimeField(null=True, blank=True,default=0,)
     assigned_to = models.ManyToManyField(User, related_name="tasks", blank=True)
     sub_tasks = models.JSONField(default=list, null=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
