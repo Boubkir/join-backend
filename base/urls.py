@@ -7,7 +7,8 @@ from authn.views import (
     RegisterAPI,
     EmailLoginAPI,
 )
-from tasks.views import TaskView, UserViewSet
+from tasks.views import TaskView
+from users.views import UserViewSet
 from django.conf.urls.static import static
 from django.conf import settings
 

@@ -1,14 +1,10 @@
 from .models import Task
-from .serializers import TaskSerializer, UserSerializer
-from rest_framework import viewsets, permissions, status
+from .serializers import TaskSerializer
+from rest_framework import viewsets, status
 from rest_framework.response import Response
-from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
 from django.core.exceptions import PermissionDenied
-
-
-
 
 class TaskView(viewsets.ModelViewSet):
     serializer_class = TaskSerializer
@@ -33,8 +29,3 @@ class TaskView(viewsets.ModelViewSet):
         self.perform_update(serializer)
         return Response(serializer.data)
 
-
-class UserViewSet(viewsets.ModelViewSet):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-    permission_classes = [permissions.IsAuthenticated]

@@ -1,4 +1,4 @@
-from tasks.serializers import UserSerializer
+from users.serializers import UserSerializer
 from .serializers import RegisterSerializer
 from rest_framework import permissions, generics
 from rest_framework.authtoken.models import Token

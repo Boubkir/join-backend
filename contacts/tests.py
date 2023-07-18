@@ -4,7 +4,6 @@ from rest_framework.test import APITestCase
 from django.contrib.auth.models import User
 from .models import Contact
 from contacts.models import Contact
-import users
 
 class ContactViewTestCase(APITestCase):
     def setUp(self):
