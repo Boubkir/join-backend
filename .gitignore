@@ -1,5 +1,46 @@
-env/
-db.sqlite3
-static/
+# Python bytecode files
+*.pyc
+__pycache__/
+
+# Django project base settings file
 base/settings.py
+
+# Shell script for deployment
 up.sh
+
+# Environment files
+.env
+
+# Database files
+*.db
+*.sqlite3
+
+# Log files
+*.log
+
+# Media files (uploaded files)
+media/
+
+# Static files (collected static files)
+static/
+
+# Virtual environments
+venv/
+env/
+
+# Application keys and sensitive information
+secret_key.txt
+settings_local.py
+
+# IDE-specific files and directories
+.vscode/
+.idea/
+*.pyproj
+*.pycproj
+*.sln
+*.bak
+
+# Editor configuration files
+*~
+.*.swp
+.*.swo
