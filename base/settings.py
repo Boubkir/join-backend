@@ -16,9 +16,9 @@ SECRET_KEY = "django-insecure-cfs=md70ww3()la=kpw_dd+3af*y14!&(q@cihq@u)ir6&xp&@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['http://35.234.173.99',"127.0.0.1", "http://localhost:4200/",'boubkir.pythonanywhere.com','https://www.boubkir-benamar.de']
+ALLOWED_HOSTS = ['35.234.173.99','join-backend.boubkir-benamar.de',"127.0.0.1", "http://localhost:4200/",'boubkir.pythonanywhere.com','https://www.boubkir-benamar.de']
 
-CORS_ALLOWED_ORIGINS = ['http://35.234.173.99',"127.0.0.1", "http://localhost:4200/",'boubkir.pythonanywhere.com','https://www.boubkir-benamar.de']
+CORS_ALLOWED_ORIGINS = ['35.234.173.99','join-backend.boubkir-benamar.de',"127.0.0.1", "http://localhost:4200/",'boubkir.pythonanywhere.com','https://www.boubkir-benamar.de']
 
 # Application definition
 
